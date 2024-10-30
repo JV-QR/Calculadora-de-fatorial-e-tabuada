@@ -1,15 +1,3 @@
-// Solicita ao usuário a escolha da operação
-let escolhaAOperacao = prompt('Você deseja calcular o fatorial ou a tabuada?').toLowerCase();
-
-
-if (escolhaAOperacao === 'fatorial'){
-    calcularFatorial();
-} else if (escolhaAOperacao === 'tabuada'){
-    calcularTabuada();
-} else {
-    console.log('Escolha inválida. Por favor, digite "fatorial" ou "tabuada".');
-}
-
 // Função para calcular o fatorial
 function calcularFatorial() {
     let numero = parseInt(prompt('Escolha um número inteiro positivo'));
@@ -43,4 +31,20 @@ function calcularTabuada () {
 }
 
 
+//Loop while que permeite múltiplos cálculos.
+while (true) {
 
+    // Solicita ao usuário a escolha da operação
+    let escolhaAOperacao = prompt('Você deseja calcular o fatorial ou a tabuada? (Digite "sair" para encerrar)').toLowerCase();
+
+    if (escolhaAOperacao === 'sair') {
+        console.log('Programa encerrado. Até logo!')
+        break; //encerra loop;
+    } else if (escolhaAOperacao === 'fatorial'){
+        calcularFatorial();
+    } else if (escolhaAOperacao === 'tabuada'){
+        calcularTabuada();
+    } else {
+        console.log('Escolha inválida. Por favor, digite "fatorial" ou "tabuada".');
+    }
+}
